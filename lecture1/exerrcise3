@@ -1,0 +1,9 @@
+function isWeekend(){
+	const todayDate= new Date();
+	const day= todayDate.getDay();
+	var ret="";
+	day==0||day==7 ? ret= "weekend" : ret= "weekdays";
+	return ret;
+}
+
+console.log(isWeekend());

@@ -1,0 +1,15 @@
+function applyCoupan(cat){
+	return function (discount){
+		return function(hello){
+			
+						
+			if(hello.category== cat){
+				hello.price=hello.price*(1-discount)
+				return hello
+			}
+			
+		}
+	} 
+}
+
+console.log(applyCoupan("food")(0.1)(item1).price==1.8)
