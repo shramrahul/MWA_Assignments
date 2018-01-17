@@ -15,3 +15,18 @@ difference in setImmediate() and process.nextTick()
 setImmediate is used if one wants to queue the function behind whatever I/O event callbacks that are already in the event queue. process.nextTick os used to effectively queue the function at the head of the event queue so that it executes immediately after the current function completes.
 
 So in a case where you're trying to break up a long running, CPU-bound job using recursion, you would now want to use setImmediate rather than process.nextTick to queue the next iteration as otherwise any I/O event callbacks wouldn't get the chance to run between iterations.
+
+
+question 3
+
+The 10 global mmodules available in Node environment are:-
+a. 	http
+b. 	fs
+c.	stream
+d. 	buffer
+e. 	setTimeout
+f. 	setImmediate
+g. 	os
+h. 	process
+i. 	url
+j. 	domain
