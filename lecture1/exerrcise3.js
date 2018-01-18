@@ -10,3 +10,5 @@ function isWeekend(){
 		return "weekday";
 	
 }
+
+console.log(isWeekend());
