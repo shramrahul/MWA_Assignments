@@ -16,7 +16,6 @@ class Clock extends EventEmitter {
 const myClock = new Clock("tick");
 myClock.on("tick", function(){
     console.log(this.message);
-    console.log(__dirname)
 });
 myClock.tick();
 
