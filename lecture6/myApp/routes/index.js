@@ -32,8 +32,8 @@ app.post('/postUser/:id/:name/:course/:grade',
     req.checkBody(req.params.grade, "Grade should not be null").isNumeric();
 
     const errors = (req.validationErrors());
-    // if (errors)
-    //   return res.status(422).json(errors.map(err => err.msg));
+    if (errors)
+      return res.status(422).json(errors.map(err => err.msg));
     return next();
   },
 
