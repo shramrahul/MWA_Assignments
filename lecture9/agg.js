@@ -66,7 +66,14 @@ db.zips.aggregate([
         pop: {$min: "$pop"} } }, 
 
       {$sort: 
-            {"_id": 1, pop: 1}
+            {"_id": 1}
        },
 
     ])
+
+
+
+
+
+
+    
