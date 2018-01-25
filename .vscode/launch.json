@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/lecture1\\exerrcise3.js"
+            "program": "${workspaceFolder}/lecture8/myApp\\app.js"
         }
     ]
 }

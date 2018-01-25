@@ -1,0 +1,36 @@
+{
+    "_id":"5a666db9a4fffcf629e149d8",
+    "isbn":"123-BFED",
+    "name":"Mike Grouse",
+    "keywords":[
+        "computer",
+        "compro",
+        "web",
+        "nodejs",
+        "express",
+        "angularjs",
+        "mongodb"
+        ],
+    "borrowed_by":[{
+                    "id":"1",
+                    "name":"Shreeram Chaulagain",
+                    "borrowedBooks":[
+                                    "123-BEFD",
+                                    "241-646",
+                                    "549-TFE"
+                                ]
+                },
+                {
+                    "id":"10",
+                    "name":"Sima Chand",
+                    "borrowed_books":[
+                                    "123-BFED",
+                                    "124-RFGH",
+                                    "ERTHG-234"
+                                    ]
+                }],
+    "status":{
+            "borrowed":true,
+            "returned":false
+            }
+}
