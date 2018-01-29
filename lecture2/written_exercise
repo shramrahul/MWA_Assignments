@@ -1,20 +1,30 @@
 question 1
 use of setImmediate instead of setTimeout
 
-setTimeout is simply like calling the function after delay has finished. Whenever a function is called it is not executed immediately, but queued so that it is executed after all the executing and currently queued eventhandlers finish first.
+setTimeout is simply like calling the function after delay has finished. Whenever a function is called
+ it is not executed immediately, but queued so that it is executed after all the executing and currently
+queued eventhandlers finish first.setImmediate is similar in this regard except that it doesn't
+use queue of functions. It checks queue of I/O eventhandlers. If all I/O events in the current 
+snapshot are processed, it executes the callback. It queues them immedieately after the last I/O
+handler somewhat like process.nextTick. So it is faster.
 
-setImmediate is similar in this regard except that it doesn't use queue of functions. It checks queue of I/O eventhandlers. If all I/O events in the current snapshot are processed, it executes the callback. It queues them immedieately after the last I/O handler somewhat like process.nextTick. So it is faster.
-
-Also setTimeout will be slow because it will check the timer at least once before executing. At times it can be twice as slow. The main advantage to using setImmediate() over setTimeout() is setImmediate() will always be executed before any timers if scheduled within an I/O cycle, independently of how many timers are present.
+Also setTimeout will be slow because it will check the timer at least once before executing. At times
+it can be twice as slow. The main advantage to using setImmediate() over setTimeout() is setImmediate()
+will always be executed before any timers if scheduled within an I/O cycle, independently of how many 
+timers are present.
 
 
 question 2
 
 difference in setImmediate() and process.nextTick()
 
-setImmediate is used if one wants to queue the function behind whatever I/O event callbacks that are already in the event queue. process.nextTick os used to effectively queue the function at the head of the event queue so that it executes immediately after the current function completes.
+setImmediate is used if one wants to queue the function behind whatever I/O event callbacks that are 
+already in the event queue. process.nextTick os used to effectively queue the function at the head of
+ the event queue so that it executes immediately after the current function completes.
 
-So in a case where you're trying to break up a long running, CPU-bound job using recursion, you would now want to use setImmediate rather than process.nextTick to queue the next iteration as otherwise any I/O event callbacks wouldn't get the chance to run between iterations.
+So in a case where you're trying to break up a long running, CPU-bound job using recursion, 
+you would now want to use setImmediate rather than process.nextTick to queue the next iteration
+ as otherwise any I/O event callbacks wouldn't get the chance to run between iterations.
 
 
 question 3

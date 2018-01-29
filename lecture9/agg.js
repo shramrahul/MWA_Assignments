@@ -67,13 +67,63 @@ db.zips.aggregate([
 
       {$sort: 
             {"_id": 1}
-       },
-
+       }
     ])
 
 
 
 
+// db.zips.aggregate([
+//     {$match:{pop:{$lt:1000}}},
+//     {$group:{
+//         _id:"$city",
+//         zip:{$push:"$_id"}
+//     }},
+//     {$project:{
+//         zip:1
+//     }}
 
+// ])
 
     
+db.zips.aggregate([
+    {$group:{
+        _id:{city:"$city", state:"$state"},
+        zips:{$push:"$_id"}
+     } },
+    {$project:{
+        _id:0,
+        city:"$_id.city",
+        state:"$_id.state",
+        size:{$size:"$zips"}
+    }},
+    {$match:{size:{$gt:2}}
+    }
+]);
+
+
+
+
+
+
+
+
+
+// const names=[
+//     {name:"shreeram",age:6},
+//     {name:"sima",age:5},
+//     {name:"jeena",age:5}
+// ];
+
+// function*loop (array){
+//     for(const item of arr){
+//         yield item;
+//     }
+// }
+
+// const courseGen= loop(names);
+// courseGen.next();
+
+
+
+
