@@ -6,9 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public value: number = 5;
+  names=["shreeram","sima","jeena","sunita","aayush","Arjun","Rupa"];
+  title = 'app';
   
-  outputValue(event){
-    this.value = event;
-  }
 }

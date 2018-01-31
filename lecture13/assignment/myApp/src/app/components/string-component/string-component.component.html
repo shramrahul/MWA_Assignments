@@ -1,0 +1,17 @@
+
+<h1>Custom directive for uppercase</h1>
+<ul appUpper>
+  <li  *ngFor="let name of names " mycolor>{{name}}</li>
+
+  </ul>
+
+
+
+  <h1>Custom directive for making element visible</h1>
+  <h3 [myvisible]="false"> I am shreeram chaulagain</h3>
+
+  <h1>Custom tag for color change</h1>
+  <h3 mycolor (outputValue)=outputValue($event)>Click here to change the color</h3>
+
+  <h1>the value of the color is {{index}}</h1>
+
