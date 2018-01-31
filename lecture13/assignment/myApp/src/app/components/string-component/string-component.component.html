@@ -1,7 +1,7 @@
 
 <h1>Custom directive for uppercase</h1>
 <ul appUpper>
-  <li  *ngFor="let name of names " mycolor>{{name}}</li>
+  <li  *ngFor="let name of names " mycolor (outputValue)=outputValue($event) >{{name}}</li>
 
   </ul>
 
