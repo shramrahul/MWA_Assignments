@@ -12,7 +12,7 @@ import { DbService } from './service/dbServics';
 
 
 const routes: Routes = [
-  //{path:'', redirectTo: 'home', pathMatch:'full'},
+  {path:'', redirectTo: 'home', pathMatch:'full'},
   {path:'home', component: HomepageComponent },
   {path:'students', component: StudentsComponent},
   {path:'students/profile/:id', component: ProfileComponent},
