@@ -4,7 +4,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
   selector: 'app-comp3',
   template: `
     <h1>Component 3:</h1>
-    <p>Output "data Obj" to Parent: <button (click)="emitMessage()">Click to Output!</button></p>
+    <p>Output "data Obj" to Parent: <button (click)="emitMessage()">
+    Click to Output!</button></p>
   `
 })
 export class Comp3Component {

@@ -9,7 +9,7 @@ import { Component, Input} from '@angular/core';
         <li>Message 2: {{message2}}</li>
         <li>Message 3: {{message3}}</li>
       </ul>
-      <p><ng-content></ng-content></p
+      <p><ng-content></ng-content></p>
   `
 })
 export class Comp1Component  {

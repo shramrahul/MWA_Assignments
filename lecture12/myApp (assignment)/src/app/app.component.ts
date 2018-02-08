@@ -2,7 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+  <app-counter value={{value}} (outputValue)="outputValue($event)"></app-counter>
+  <div style="text-align:center">
+    <h1>
+      Parent Component value : {{ value }}!
+    </h1>
+  </div>
+  `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {

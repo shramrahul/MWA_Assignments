@@ -6,7 +6,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     <h1>Component 2:</h1>
     <p (click)="setMessage1()">Click here to see message1: {{message1}}</p>
     <p (click)="setMessage2('Text for Message2 onClick!')">Click here to see message2: {{message2}}</p>
-    <p (click)="setMessage3($event)">Click here to see Event info ($event.target.tagName): {{message3}}</p>
+    <p (click)="setMessage3($event)">Click here to see Event info ($event): {{message3}}</p>
     <p class="red">Red Paragraph 1</p>
   `,
   styles: ['p.red { color: red; }'],

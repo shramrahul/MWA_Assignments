@@ -102,4 +102,16 @@ router.get('/findNearestLocation/:category',(req,res)=>{
   });
 });
 
+
+
+router.get("/addFoods",(req,res)=>{
+  var db= mongo.db("mongodb://localhost:27017/lecture8",{native_parser:true});
+  db.bind("food");
+  db.food.find().toArray((err,item)=>{
+   // if(err) res.status(400).json(err);
+    res.json(item);
+  });
+})
+
+
 module.exports = router;
